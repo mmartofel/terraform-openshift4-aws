@@ -25,7 +25,6 @@ data "local_file" "cabundle" {
   filename = "${var.openshift_additional_trust_bundle}"
 }
 
-
 data "template_file" "install_config_yaml" {
   template = <<-EOF
 apiVersion: v1
@@ -78,7 +77,6 @@ sshKey: '${local.public_ssh_key}'
   ${indent(2,data.local_file.cabundle[0].content)}%{endif}
 EOF
 }
-
 
 resource "local_file" "install_config" {
   content  =  data.template_file.install_config_yaml.rendered
@@ -379,7 +377,6 @@ resource "local_file" "cluster-monitoring-configmap" {
     null_resource.generate_manifests,
   ]
 }
-
 
 data "template_file" "configure-image-registry-job-serviceaccount" {
   template = <<EOF

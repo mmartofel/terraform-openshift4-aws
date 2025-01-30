@@ -30,9 +30,12 @@ resource "aws_s3_bucket" "ignition" {
   }
 }
 
-resource "aws_s3_bucket_acl" "ignition_acl" {
+resource "aws_s3_bucket_ownership_controls" "ignition" {
   bucket = aws_s3_bucket.ignition.id
-  acl    = "private"
+
+  rule {
+    object_ownership = "BucketOwnerEnforced"
+  }
 }
 
 resource "aws_s3_object" "ignition" {
