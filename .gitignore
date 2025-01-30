@@ -14,3 +14,6 @@ installer-files/**
 
 # OS X files
 .DS_Store
+
+# VSCode files
+.VSCode
