@@ -6,7 +6,7 @@
 *.tfstate.*
 
 # .tfvars files
-*.tfvars
+# *.tfvars
 openshift_pull_secret.json
 .terraform.lock.hcl
 *.pem

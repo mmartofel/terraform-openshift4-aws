@@ -17,7 +17,6 @@ data "aws_ebs_default_kms_key" "current" {}
 
 resource "aws_s3_bucket" "ignition" {
   # bucket = var.ignition_bucket
-  acl = "private"
 
   tags = merge(
     {
@@ -31,11 +30,15 @@ resource "aws_s3_bucket" "ignition" {
   }
 }
 
-resource "aws_s3_bucket_object" "ignition" {
+resource "aws_s3_bucket_acl" "ignition_acl" {
+  bucket = aws_s3_bucket.ignition.id
+  acl    = "private"
+}
+
+resource "aws_s3_object" "ignition" {
   bucket  = aws_s3_bucket.ignition.id
   key     = "bootstrap.ign"
   content = var.ignition
-  acl     = "private"
 
   server_side_encryption = "AES256"
 
