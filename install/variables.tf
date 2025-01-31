@@ -144,7 +144,7 @@ variable "airgapped" {
 
 variable "openshift_ssh_key" {
   type    = string
-  default = ""
+  default = "./id_ed25519.pub"
 }
 
 variable "openshift_additional_trust_bundle" {

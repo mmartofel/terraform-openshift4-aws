@@ -12,9 +12,6 @@ EOF
   default = "10.0.0.0/16"
 }
 
-
-
-
 variable "base_domain" {
   type = string
 
