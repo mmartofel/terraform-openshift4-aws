@@ -250,7 +250,7 @@ Create your cluster and then associate the private Hosted Zone Record in Route53
 
 To delete the cluster - `terraform destroy` can be implemented.
 The following items are not deleted (and may stop destroy from being successful):
-- EBS volumes from the gp2 storage classes
+- EBS volumes from the io1 storage classes
 - Public zone DNS updates
 - Custom compute nodes that are not the initial worker nodes
 

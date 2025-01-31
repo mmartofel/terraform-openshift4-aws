@@ -15,20 +15,20 @@ variable "aws_bootstrap_instance_type" {
 
 variable "aws_master_instance_type" {
   type        = string
-  description = "Instance type for the master node(s). Default: `m4.xlarge`."
-  default     = "m5.xlarge"
+  description = "Instance type for the master node(s). Default: `m5.2xlarge`."
+  default     = "m5.2xlarge"
 }
 
 variable "aws_worker_instance_type" {
   type        = string
-  description = "Instance type for the worker node(s). Default: `m4.2xlarge`."
+  description = "Instance type for the worker node(s). Default: `m5.2xlarge`."
   default     = "m5.2xlarge"
 }
 
 variable "aws_infra_instance_type" {
   type        = string
-  description = "Instance type for the worker node(s). Default: `m4.2xlarge`."
-  default     = "m5.xlarge"
+  description = "Instance type for the worker node(s). Default: `m5.2xlarge`."
+  default     = "m5.2xlarge"
 }
 
 # variable "aws_ami" {
@@ -51,13 +51,13 @@ EOF
 variable "aws_master_root_volume_type" {
   type = string
   description = "The type of volume for the root block device of master nodes."
-  default = "gp2"
+  default = "io1"
 }
 
 variable "aws_master_root_volume_size" {
   type = string
   description = "The size of the volume in gigabytes for the root block device of master nodes."
-  default = 200
+  default = 300
 }
 
 variable "aws_master_root_volume_iops" {
@@ -74,13 +74,13 @@ EOF
 variable "aws_worker_root_volume_type" {
   type        = string
   description = "The type of volume for the root block device of worker nodes."
-  default = "gp2"
+  default = "io1"
 }
 
 variable "aws_worker_root_volume_size" {
   type        = string
   description = "The size of the volume in gigabytes for the root block device of worker nodes."
-  default = 200
+  default = 300
 }
 
 variable "aws_worker_root_volume_iops" {
@@ -90,7 +90,7 @@ variable "aws_worker_root_volume_iops" {
 The amount of provisioned IOPS for the root block device of worker nodes.
 Ignored if the volume type is not io1.
 EOF
-  default = 0
+  default = 4000
 
 }
 
@@ -102,13 +102,13 @@ variable "infra_count" {
 variable "aws_infra_root_volume_type" {
   type        = string
   description = "The type of volume for the root block device of infra nodes."
-  default = "gp2"
+  default = "io1"
 }
 
 variable "aws_infra_root_volume_size" {
   type        = string
   description = "The size of the volume in gigabytes for the root block device of infra nodes."
-  default = 200
+  default = 300
 }
 
 variable "aws_infra_root_volume_iops" {
@@ -118,7 +118,7 @@ variable "aws_infra_root_volume_iops" {
 The amount of provisioned IOPS for the root block device of infra nodes.
 Ignored if the volume type is not io1.
 EOF
-  default = 0
+  default = 4000
 
 }
 
