@@ -67,7 +67,7 @@ variable "aws_master_root_volume_iops" {
 The amount of provisioned IOPS for the root block device of master nodes.
 Ignored if the volume type is not io1.
 EOF
-  default = 0
+  default = 4000
 
 }
 
