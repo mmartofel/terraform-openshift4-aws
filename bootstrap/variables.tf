@@ -46,13 +46,13 @@ variable "target_group_arns_length" {
 
 variable "volume_iops" {
   type = string
-  default = "300"
+  default = "4000"
   description = "The amount of IOPS to provision for the disk."
 }
 
 variable "volume_size" {
   type = string
-  default = "50"
+  default = "150"
   description = "The volume size (in gibibytes) for the bootstrap node's root volume."
 }
 
