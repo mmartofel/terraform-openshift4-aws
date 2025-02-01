@@ -15,17 +15,17 @@ variable "ami" {
 
 variable "cluster_network_cidr" {
   type        = string
-  default     = "192.168.0.0/17"
+  default     = "10.128.0.0/14"
 }
 
 variable "service_network_cidr" {
   type        = string
-  default     = "192.168.128.0/24"
+  default     = "172.30.0.0/16"
 }
 
 variable "vpc_cidr_block" {
   type        = string
-  default     = "192.168.0.0/24"
+  default     = "10.0.0.0/16"
 }
 
 variable "cluster_network_host_prefix" {
