@@ -8,5 +8,5 @@
 #
 # and the other stuff you can do with oc or kubectl if you wish to
 
-export KUBECONFIG=/home/ec2-user/terraform-ibm/installer-files/temp/auth/kubeconfig
-export PATH=$PATH:/home/ec2-user/terraform-ibm/installer-files
+export KUBECONFIG=/home/ec2-user/terraform-openshift4-aws/installer-files/temp/auth/kubeconfig
+export PATH=$PATH:/home/ec2-user/terraform-openshift4-aws/installer-files
