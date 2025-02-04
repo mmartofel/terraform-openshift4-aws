@@ -85,7 +85,7 @@ resource "aws_security_group" "private_ec2_api" {
   tags =  merge(
     var.tags,
     tomap({
-      "Name" = "${var.cluster_id}-private-ec2-api",
+      "Name" = "${var.cluster_id}-lb",
     })
   )
 }
