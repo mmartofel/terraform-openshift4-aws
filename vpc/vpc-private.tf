@@ -35,7 +35,7 @@ resource "aws_subnet" "private_subnet" {
 
   tags = merge(
     {
-      "Name"                            = "${var.cluster_id}-private-${var.availability_zones[count.index]}"
+      "Name"                            = "${var.cluster_id}-subnet-private-${var.availability_zones[count.index]}"
       "kubernetes.io/role/internal-elb" = ""
     },
     var.tags,

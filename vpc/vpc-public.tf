@@ -52,7 +52,7 @@ resource "aws_subnet" "public_subnet" {
 
   tags = merge(
     {
-      "Name" = "${var.cluster_id}-public-${var.availability_zones[count.index]}"
+      "Name" = "${var.cluster_id}-subnet-public-${var.availability_zones[count.index]}"
     },
     var.tags,
   )

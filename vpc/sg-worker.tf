@@ -7,7 +7,7 @@ resource "aws_security_group" "worker" {
 
   tags = merge(
     {
-      "Name" = "${var.cluster_id}-worker-sg"
+      "Name" = "${var.cluster_id}-node"
     },
     var.tags,
   )
