@@ -79,7 +79,7 @@ resource "aws_vpc_endpoint" "private_elb" {
 }
 
 resource "aws_security_group" "private_ec2_api" {
-  name =  "${var.cluster_id}-lb"
+  name =  "${var.cluster_id}-ec2-api"
   vpc_id =  data.aws_vpc.cluster_vpc.id
 
   tags =  merge(
